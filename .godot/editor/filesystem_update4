@@ -1,0 +1,8 @@
+res://World/world.tscn
+res://Player/player.tscn
+res://Enemy/enemy_kobold_weak.tscn
+res://Utility/upgrade_db.tscn
+res://Objects/experience_gem.tscn
+res://Player/Attack/javelin.tscn
+res://Player/GUI/main_meny.tscn
+res://Player/GUI/paus_meny.tscn

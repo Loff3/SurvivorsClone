@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqhamo1y45jmy"]
+
+[ext_resource type="Script" path="res://Player/GUI/main_meny.gd" id="1_h5o0w"]
+[ext_resource type="FontFile" uid="uid://cb4e8g30xxp5u" path="res://Font/tenderness.otf" id="2_2k5sw"]
+
+[node name="mainMeny" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h5o0w")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.122252, 0.122252, 0.122252, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_right = 640.0
+grow_vertical = 2
+
+[node name="VBoxLabel" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxLabel"]
+layout_mode = 2
+text = "Meny
+"
+horizontal_alignment = 1
+
+[node name="VBoxButton" type="VBoxContainer" parent="MarginContainer/VBoxLabel"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="newGame" type="Button" parent="MarginContainer/VBoxLabel/VBoxButton"]
+layout_mode = 2
+text = "New Game
+"
+
+[node name="quit" type="Button" parent="MarginContainer/VBoxLabel/VBoxButton"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 100.0
+theme_override_fonts/font = ExtResource("2_2k5sw")
+theme_override_font_sizes/font_size = 72
+text = "Survivors Clone"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/VBoxLabel/VBoxButton/newGame" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxLabel/VBoxButton/newGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxLabel/VBoxButton/quit" to="." method="_on_quit_pressed"]
